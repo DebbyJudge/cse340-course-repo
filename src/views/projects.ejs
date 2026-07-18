@@ -2,38 +2,54 @@
 
 <main>
 
-<h1><%= title %></h1>
+    <h1><%= title %></h1>
 
-<ul>
+    <p>Here are the next five upcoming service projects:</p>
 
-<% projects.forEach(project => { %>
+    <ul>
 
-<li>
+    <% projects.forEach(project => { %>
 
-<strong>
-<%= new Date(project.project_date).toLocaleDateString() %>
-</strong>
+        <li>
 
-:
+            <strong>
+                <%= new Date(project.project_date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                }) %>
+            </strong>
 
-<%= project.title %>
+            :
 
-(<%= project.organization_name %>)
+            <a href="/project/<%= project.project_id %>">
+                <%= project.title %>
+            </a>
 
-<br>
+            (
 
-<%= project.description %>
+            <a href="/organization/<%= project.organization_id %>">
+                <%= project.organization_name %>
+            </a>
 
-<br>
+            )
 
-Location:
-<%= project.location %>
+            <br>
 
-</li>
+            <%= project.description %>
 
-<% }) %>
+            <br>
 
-</ul>
+            <strong>Location:</strong>
+            <%= project.location %>
+
+        </li>
+
+        <br>
+
+    <% }) %>
+
+    </ul>
 
 </main>
 

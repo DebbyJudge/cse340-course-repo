@@ -13,7 +13,9 @@
                     alt="<%= organization.name %> logo"
                 >
 
-                <strong><%= organization.name %></strong>
+                <a href="/organization/<%= organization.organization_id %>">
+                    <%= organization.name %>
+                </a>
 
                 <p><%= organization.description %></p>
 
