@@ -84,3 +84,59 @@ VALUES
 (3,'Charity Cleanup','Neighborhood cleanup','Abeokuta','2026-08-20'),
 (3,'School Supplies','Donate school materials','Akure','2026-08-28'),
 (3,'Senior Care Visit','Volunteer at elderly homes','Calabar','2026-09-06');
+
+
+-- Category Table
+
+CREATE TABLE category (
+    category_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+
+-- Project Category Table
+
+CREATE TABLE project_category (
+    project_id INT NOT NULL,
+    category_id INT NOT NULL,
+
+    PRIMARY KEY (project_id, category_id),
+
+    FOREIGN KEY (project_id)
+        REFERENCES project(project_id)
+        ON DELETE CASCADE,
+
+    FOREIGN KEY (category_id)
+        REFERENCES category(category_id)
+        ON DELETE CASCADE
+);
+
+-- Categories
+
+INSERT INTO category (name)
+VALUES
+('Construction'),
+('Agriculture'),
+('Community Service');
+
+-- Project Categories
+
+INSERT INTO project_category (project_id, category_id)
+VALUES
+(1,1),
+(2,1),
+(3,1),
+(4,1),
+(5,1),
+
+(6,2),
+(7,2),
+(8,2),
+(9,2),
+(10,2),
+
+(11,3),
+(12,3),
+(13,3),
+(14,3),
+(15,3);

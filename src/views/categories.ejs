@@ -1,12 +1,23 @@
 <%- include('partials/header') %>
-    <main>
-        <h1><%= title %></h1>
-        <h2>Service Project Categories</h2>
-        <ul>
-            <li><strong>Environmental</strong>: Projects focused on protecting and improving our environment.</li>
-            <li><strong>Educational</strong>: Volunteer opportunities to support learning and education initiatives.</li>
-            <li><strong>Community Service</strong>: General community improvement and support projects.</li>
-            <li><strong>Health and Wellness</strong>: Projects dedicated to health, wellness, and wellbeing.</li>
-        </ul>
-    </main>
+
+<main>
+
+    <h1><%= title %></h1>
+
+    <p>Browse our available service project categories.</p>
+
+    <ul>
+
+        <% categories.forEach(category => { %>
+
+            <li>
+                <%= category.name %>
+            </li>
+
+        <% }); %>
+
+    </ul>
+
+</main>
+
 <%- include('partials/footer') %>
