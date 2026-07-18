@@ -24,6 +24,22 @@
         </a>
     </p>
 
-</main>
+    <p>
+
+    <strong>Categories:</strong>
+
+    <% categories.forEach(category => { %>
+
+    <a href="/category/<%= category.category_id %>">
+        <span class="category-tag">
+            <%= category.name %>
+        </span>
+    </a>
+
+    <% }) %>
+
+    </p>
+
+    </main>
 
 <%- include('partials/footer') %>

@@ -250,6 +250,21 @@ input:focus {
     outline-offset: 2px;
 }
 
+.category-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 4px;
+    background: #0d6efd;
+    color: white;
+    border-radius: 20px;
+    font-size: .85rem;
+    text-decoration: none;
+}
+
+.category-tag:hover {
+    background: #084298;
+}
+
 /* Print Styles */
 @media print {
     nav {
